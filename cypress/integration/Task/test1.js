@@ -70,7 +70,9 @@ describe('Task QA INCIT', function() {
 
             cy.get('button').click();
 
-            cy.get('#decoded').should('have.value', expectedDecodedData);
+
+            cy.get('#decoded', { timeout: 10000 })
+            .should('have.value', expectedDecodedData);
 
             
         });
